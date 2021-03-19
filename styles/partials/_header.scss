@@ -1,0 +1,54 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 4.375rem;
+
+    .headerContainer {
+        max-width: 1440px;
+        width: 90%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.headerContainer .logo {
+    width: 15.3125rem;
+    height: 100%;
+}
+
+.headerContainer nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li:not(:first-child) {
+        margin-left: 5rem;
+    }
+
+    li a {
+        font-size: 1.125rem;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 0;
+            background: $orange;
+            transition: 1s ease;
+        }
+    }
+
+    a:hover {
+        &::before {
+            width: 120%;
+        }
+    }
+}
